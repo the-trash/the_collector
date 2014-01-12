@@ -15,8 +15,7 @@ class Collection < ActiveRecord::Base
 
     # data for Model selects
     to_select = citems.inject({}) do |hash, item|
-      hash[item.item_type] ||= []
-      hash[item.item_type].push item.item_id
+      (hash[item.item_type] ||= []).push item.item_id
       hash
     end
 
