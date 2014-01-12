@@ -1,0 +1,10 @@
+h1 Items
+
+- @items.each do |item|
+  p
+    = item.class.to_s
+    = item.collection_item_id
+
+br
+
+= paginate @items
